@@ -34,7 +34,7 @@ namespace Lumpn.Messaging
             }
         }
 
-        public void OnMessage(IMessage message)
+        public void OnMessage(Message message)
         {
             foreach (var handler in handlers)
             {

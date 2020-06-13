@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+//----------------------------------------
+// MIT License
+// Copyright(c) 2020 Jonas Boetel
+//----------------------------------------
 using UnityEngine;
 
 namespace Lumpn.Messaging
@@ -7,6 +9,9 @@ namespace Lumpn.Messaging
     public sealed class PrefabSpawner : MonoBehaviour, IMessageReceiver
     {
         [SerializeField] private Message message;
+
+        [SerializeField] private GameObject prefab;
+        [SerializeField] private Transform attachPoint;
 
         void OnEnable()
         {
@@ -18,9 +23,9 @@ namespace Lumpn.Messaging
             message.Register(this);
         }
 
-        public void OnMessage(IMessage message)
+        public void OnMessage(Message message)
         {
-            throw new System.NotImplementedException();
+            Object.Instantiate<GameObject>(prefab, attachPoint);
         }
     }
 }

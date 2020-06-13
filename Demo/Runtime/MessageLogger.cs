@@ -1,4 +1,4 @@
-﻿//----------------------------------------
+//----------------------------------------
 // MIT License
 // Copyright(c) 2020 Jonas Boetel
 //----------------------------------------
@@ -10,7 +10,7 @@ namespace Lumpn.Messaging
     {
         [SerializeField] private Message[] messages;
 
-        public void OnMessage(IMessage message)
+        public void OnMessage(Message message)
         {
             Debug.LogFormat(this, "Message '{0}' received", message.name);
         }

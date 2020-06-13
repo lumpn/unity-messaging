@@ -1,4 +1,3 @@
-﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +5,7 @@ namespace Lumpn.Messaging
 {
     public sealed class TestMessageReceiver : MonoBehaviour, IMessageReceiver
     {
-        public readonly List<IMessage> received = new List<IMessage>();
+        public readonly List<Message> received = new List<Message>();
 
         public void Register(Message message)
         {
@@ -18,7 +17,7 @@ namespace Lumpn.Messaging
             message.Deregister(this);
         }
 
-        public void OnMessage(IMessage message)
+        public void OnMessage(Message message)
         {
             received.Add(message);
         }

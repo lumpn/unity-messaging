@@ -32,6 +32,11 @@ namespace Lumpn.Messaging
             receivers.RemoveUnordered(receiver);
         }
 
+        public override void Send(GameObject context)
+        {
+            Send();
+        }
+
         public override void Register(IMessageReceiver receiver)
         {
             Register((IGlobalMessageReceiver)receiver);

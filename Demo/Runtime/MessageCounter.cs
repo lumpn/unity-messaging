@@ -1,4 +1,4 @@
-﻿//----------------------------------------
+//----------------------------------------
 // MIT License
 // Copyright(c) 2020 Jonas Boetel
 //----------------------------------------
@@ -12,7 +12,7 @@ namespace Lumpn.Messaging
 
         [field: System.NonSerialized] public int count { get; private set; }
 
-        public void OnMessage(IMessage message1)
+        public void OnMessage(Message message1)
         {
             if (message1 == message)
             {

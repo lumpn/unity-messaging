@@ -9,7 +9,7 @@ namespace Lumpn.Messaging
         [Test]
         public void TestLocalMessage()
         {
-            var msg = ScriptableObject.CreateInstance<Message>();
+            var msg = ScriptableObject.CreateInstance<LocalMessage>();
 
             var go = new GameObject("Test");
             var rec = go.AddComponent<TestMessageReceiver>();
@@ -33,7 +33,7 @@ namespace Lumpn.Messaging
             Assert.AreEqual(2, rec.received.Count);
 
             // does not receive another message sent to same game object
-            var msg2 = ScriptableObject.CreateInstance<Message>();
+            var msg2 = ScriptableObject.CreateInstance<LocalMessage>();
             msg2.Send(go2);
             Assert.AreEqual(2, rec.received.Count);
 

@@ -8,24 +8,27 @@ namespace Lumpn.Messaging
 {
     public sealed class MessageLogger : MonoBehaviour, IMessageReceiver
     {
-        [SerializeField] private GlobalMessage globalMessage;
-        [SerializeField] private Message message;
+        [SerializeField] private Message[] messages;
 
         public void OnMessage(IMessage message)
         {
-            Debug.LogFormat(this, "Global message '{0}' received", message.name);
+            Debug.LogFormat(this, "Message '{0}' received", message.name);
         }
 
         void OnEnable()
         {
-            globalMessage.Register(this);
-            message.Register(this);
+            foreach (var message in messages)
+            {
+                message.Register(this);
+            }
         }
 
         void OnDisable()
         {
-            message.Deregister(this);
-            globalMessage.Deregister(this);
+            foreach (var message in messages)
+            {
+                message.Deregister(this);
+            }
         }
     }
 }

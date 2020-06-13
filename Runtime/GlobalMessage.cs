@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Lumpn.Messaging
 {
     [CreateAssetMenu(fileName = "Message", menuName = "Data/Global Message")]
-    public sealed class GlobalMessage : ScriptableObject, IMessage
+    public sealed class GlobalMessage : Message
     {
         private static readonly List<IGlobalMessageReceiver> emptyList = new List<IGlobalMessageReceiver>();
 
@@ -32,12 +32,12 @@ namespace Lumpn.Messaging
             receivers.RemoveUnordered(receiver);
         }
 
-        public void Register(IMessageReceiver receiver)
+        public override void Register(IMessageReceiver receiver)
         {
             Register((IGlobalMessageReceiver)receiver);
         }
 
-        public void Deregister(IMessageReceiver receiver)
+        public override void Deregister(IMessageReceiver receiver)
         {
             Deregister((IGlobalMessageReceiver)receiver);
         }

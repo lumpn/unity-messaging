@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Lumpn.Messaging
 {
-    public sealed class PrefabSpawner : IMessageReceiver
+    public sealed class PrefabSpawner : MonoBehaviour, IMessageReceiver
     {
         [SerializeField] private Message message;
 
@@ -16,6 +16,11 @@ namespace Lumpn.Messaging
         void OnDisable()
         {
             message.Register(this);
+        }
+
+        public void OnMessage(IMessage message)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -1,7 +1,11 @@
-﻿namespace Lumpn.Messaging
+﻿//----------------------------------------
+// MIT License
+// Copyright(c) 2020 Jonas Boetel
+//----------------------------------------
+namespace Lumpn.Messaging
 {
     public interface IGlobalMessageReceiver
     {
-        void OnMessage(Message message);
+        void OnMessage(IMessage message);
     }
 }

@@ -7,12 +7,12 @@ using UnityEngine.Events;
 
 namespace Lumpn.Messaging
 {
-    public sealed class MessageReceiver : MonoBehaviour, IMessageReceiver
+    public sealed class GlobalMessageReceiver : MonoBehaviour, IGlobalMessageReceiver
     {
         [System.Serializable]
         public struct MessageHandler
         {
-            public Message message;
+            public GlobalMessage message;
             public UnityEvent @event;
         }
 
@@ -34,7 +34,7 @@ namespace Lumpn.Messaging
             }
         }
 
-        public void OnMessage(Message message)
+        public void OnMessage(GlobalMessage message)
         {
             foreach (var handler in handlers)
             {

@@ -5,6 +5,7 @@
   "description": "Non-allocating, strongly typed SendMessage messaging facilities.",
   "unity": "2017.1",
   "dependencies": {
+    "com.unity.modules.animation": "1.0.0",
     "com.unity.ext.nunit": "1.0.0"
   },
   "keywords": [

@@ -5,7 +5,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Lumpn.Messaging
+namespace Lumpn.Messaging.Demo
 {
     [CustomEditor(typeof(MessageCounter))]
     public sealed class MessageCounterEditor : Editor

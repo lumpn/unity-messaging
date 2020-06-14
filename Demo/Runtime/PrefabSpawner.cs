@@ -4,7 +4,7 @@
 //----------------------------------------
 using UnityEngine;
 
-namespace Lumpn.Messaging
+namespace Lumpn.Messaging.Demo
 {
     public sealed class PrefabSpawner : MonoBehaviour, IMessageReceiver
     {

@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lumpn.Messaging
+namespace Lumpn.Messaging.Tests
 {
     public sealed class TestMessageReceiver : MonoBehaviour, IMessageReceiver
     {

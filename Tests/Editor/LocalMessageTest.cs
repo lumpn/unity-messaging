@@ -5,7 +5,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
-namespace Lumpn.Messaging
+namespace Lumpn.Messaging.Tests
 {
     [TestFixture]
     public sealed class LocalMessageTest

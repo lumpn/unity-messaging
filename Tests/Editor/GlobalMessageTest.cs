@@ -1,3 +1,7 @@
+//----------------------------------------
+// MIT License
+// Copyright(c) 2020 Jonas Boetel
+//----------------------------------------
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;

@@ -1,0 +1,17 @@
+{
+    "name": "de.lumpn.messaging.Demo.Editor",
+    "references": [
+        "GUID:eed12063205d30843aa3a12233bdc871"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

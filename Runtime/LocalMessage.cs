@@ -14,6 +14,8 @@ namespace Lumpn.Messaging
 
         private readonly Dictionary<GameObject, List<IMessageReceiver>> allReceivers = new Dictionary<GameObject, List<IMessageReceiver>>();
 
+        internal IEnumerable<KeyValuePair<GameObject, List<IMessageReceiver>>> Receivers { get { return allReceivers; } }
+
         public override void Send(GameObject context)
         {
             var receivers = allReceivers.GetOrFallback(context, emptyList);

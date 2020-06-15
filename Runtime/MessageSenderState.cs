@@ -4,9 +4,8 @@
 //----------------------------------------
 using UnityEngine;
 
-namespace Lumpn.Messaging.Demo
+namespace Lumpn.Messaging
 {
-    [AddComponentMenu("")]
     public sealed class MessageSenderState : StateMachineBehaviour
     {
         [SerializeField] private Message onEnter;

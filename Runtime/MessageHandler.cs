@@ -7,16 +7,16 @@ using UnityEngine.Events;
 
 namespace Lumpn.Messaging
 {
-    public sealed class MessageReceiver : MonoBehaviour, IMessageReceiver
+    public sealed class MessageHandler : MonoBehaviour, IMessageReceiver
     {
         [System.Serializable]
-        public struct MessageHandler
+        public struct Handler
         {
             public Message message;
             public UnityEvent @event;
         }
 
-        [SerializeField] private MessageHandler[] handlers;
+        [SerializeField] private Handler[] handlers;
 
         void OnEnable()
         {

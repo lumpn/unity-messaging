@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Lumpn.Messaging.Demo
 {
+    [AddComponentMenu("")]
     public sealed class MessageLogger : MonoBehaviour, IMessageReceiver
     {
         [SerializeField] private Message[] messages;

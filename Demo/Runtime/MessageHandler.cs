@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 namespace Lumpn.Messaging.Demo
 {
+    [AddComponentMenu("")]
     public sealed class MessageHandler : MonoBehaviour, IMessageReceiver
     {
         [System.Serializable]

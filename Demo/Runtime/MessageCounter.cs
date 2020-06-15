@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace Lumpn.Messaging.Demo
 {
-    [CreateAssetMenu]
     public sealed class MessageCounter : ScriptableObject, IGlobalMessageReceiver
     {
         [SerializeField] private GlobalMessage message;

@@ -1,4 +1,5 @@
 {
   "dependencies": {
+    "de.lumpn.unity-matomo": "file:../../Messaging"
   }
 }

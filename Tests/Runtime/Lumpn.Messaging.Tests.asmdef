@@ -1,5 +1,6 @@
 {
-    "name": "de.lumpn.messaging.Tests",
+    "name": "Lumpn.Messaging.Tests",
+    "rootNamespace": "",
     "references": [
         "GUID:66d529d053b65bb43abe765eb44a72c4"
     ],

@@ -1,5 +1,5 @@
 {
-    "name": "Lumpn.Messaging.Runtime",
+    "name": "Lumpn.Messaging",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],

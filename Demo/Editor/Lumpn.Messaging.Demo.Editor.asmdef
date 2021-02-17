@@ -1,9 +1,12 @@
 {
-    "name": "de.lumpn.messaging.Demo",
+    "name": "Lumpn.Messaging.Demo.Editor",
+    "rootNamespace": "",
     "references": [
-        "GUID:66d529d053b65bb43abe765eb44a72c4"
+        "GUID:eed12063205d30843aa3a12233bdc871"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

@@ -4,4 +4,4 @@
 //----------------------------------------
 using System.Runtime.CompilerServices;
 
-[assembly:InternalsVisibleTo("de.lumpn.messaging.Editor")]
+[assembly:InternalsVisibleTo("Lumpn.Messaging.Editor")]

@@ -9,23 +9,18 @@ using System.Linq;
 namespace Lumpn.Messaging
 {
     [CustomEditor(typeof(LocalMessage))]
-    public class LocalMessageEditor : Editor
+    public class LocalMessageEditor : Editor<LocalMessage>
     {
-        public override void OnInspectorGUI()
+        public override void OnInspectorGUI(LocalMessage message)
         {
-            base.OnInspectorGUI();
-
-            var message = (LocalMessage)target;
-
-            EditorGUILayout.BeginVertical(GUI.skin.box);
             EditorGUILayout.LabelField("Receivers");
             foreach (var receiver in message.Receivers.SelectMany(p => p.Value))
             {
-                var obj = receiver as Object;
-                if (!obj) continue;
-                EditorGUILayout.ObjectField(obj.name, obj, typeof(Object), true);
+                if (receiver is Object obj)
+                {
+                    EditorGUILayout.ObjectField(obj.name, obj, typeof(Object), true);
+                }
             }
-            EditorGUILayout.EndVertical();
 
             Repaint();
         }

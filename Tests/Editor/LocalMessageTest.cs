@@ -16,8 +16,8 @@ namespace Lumpn.Messaging.Tests
             var msg = ScriptableObject.CreateInstance<LocalMessage>();
 
             var go = new GameObject("Test");
-            var rec = go.AddComponent<TestMessageReceiver>();
-            rec.Register(msg);
+            var rec = go.AddComponent<MessageReceiver>();
+            msg.Register(rec);
             Assert.AreEqual(0, rec.received.Count);
 
             // receives message sent to same game object
@@ -41,7 +41,7 @@ namespace Lumpn.Messaging.Tests
             msg2.Send(go2);
             Assert.AreEqual(2, rec.received.Count);
 
-            rec.Deregister(msg);
+            msg.Deregister(rec);
 
             Object.DestroyImmediate(msg2);
             Object.DestroyImmediate(msg);

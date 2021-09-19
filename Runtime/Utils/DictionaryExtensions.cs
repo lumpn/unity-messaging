@@ -8,20 +8,19 @@ namespace Lumpn.Messaging
 {
     internal static class DictionaryExtensions
     {
-        public static V GetOrFallback<K, V>(this IDictionary<K, V> dictionary, K key, V fallbackValue)
+        public static V GetOrDefault<K, V>(this IDictionary<K, V> dictionary, K key, V defaultValue)
         {
             V value;
             if (!dictionary.TryGetValue(key, out value))
             {
-                value = fallbackValue;
+                value = defaultValue;
             }
             return value;
         }
 
         public static V GetOrAddNew<K, V>(this IDictionary<K, V> dictionary, K key) where V : new()
         {
-            V value;
-            if (!dictionary.TryGetValue(key, out value))
+            if (!dictionary.TryGetValue(key, out V value))
             {
                 value = new V();
                 dictionary.Add(key, value);

@@ -6,11 +6,13 @@ using UnityEngine;
 
 namespace Lumpn.Messaging.Demo
 {
-    public sealed class MessageCounter : ScriptableObject, IGlobalMessageReceiver
+    public sealed class MessageCounter : ScriptableObject, IMessageReceiver
     {
         [SerializeField] private GlobalMessage message;
 
         [field: System.NonSerialized] public int count { get; private set; }
+
+        public GameObject gameObject { get { return null; } }
 
         public void OnMessage(Message message)
         {

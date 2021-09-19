@@ -2,28 +2,29 @@
 // MIT License
 // Copyright(c) 2020 Jonas Boetel
 //----------------------------------------
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Lumpn.Messaging.Tests
+namespace Lumpn.Messaging
 {
-    public sealed class TestMessageReceiver : MonoBehaviour, IMessageReceiver
+    public sealed class MessageForwarder : MonoBehaviour, IMessageReceiver
     {
-        public readonly List<Message> received = new List<Message>();
+        [SerializeField] private Message message;
+        [SerializeField] private UnityEvent @event;
 
-        public void Register(Message message)
+        void OnEnable()
         {
             message.Register(this);
         }
 
-        public void Deregister(Message message)
+        void OnDisable()
         {
             message.Deregister(this);
         }
 
         public void OnMessage(Message message)
         {
-            received.Add(message);
+            @event.Invoke();
         }
     }
 }

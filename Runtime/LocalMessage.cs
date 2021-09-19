@@ -12,14 +12,14 @@ namespace Lumpn.Messaging
     {
         private static readonly List<IMessageReceiver> emptyList = new List<IMessageReceiver>();
 
-        private readonly Dictionary<GameObject, List<IMessageReceiver>> allReceivers = new Dictionary<GameObject, List<IMessageReceiver>>();
+        private readonly Dictionary<GameObject, List<IMessageReceiver>> receivers = new Dictionary<GameObject, List<IMessageReceiver>>();
 
-        internal IEnumerable<KeyValuePair<GameObject, List<IMessageReceiver>>> Receivers { get { return allReceivers; } }
+        internal IReadOnlyDictionary<GameObject, List<IMessageReceiver>> Receivers { get { return receivers; } }
 
         public override void Send(GameObject context)
         {
-            var receivers = allReceivers.GetOrFallback(context, emptyList);
-            foreach (var receiver in receivers)
+            var localReceivers = receivers.GetOrDefault(context, emptyList);
+            foreach (var receiver in localReceivers)
             {
                 receiver.OnMessage(this);
             }
@@ -27,14 +27,14 @@ namespace Lumpn.Messaging
 
         public override void Register(IMessageReceiver receiver)
         {
-            var receivers = allReceivers.GetOrAddNew(receiver.gameObject);
-            receivers.Add(receiver);
+            var localReceivers = receivers.GetOrAddNew(receiver.gameObject);
+            localReceivers.Add(receiver);
         }
 
         public override void Deregister(IMessageReceiver receiver)
         {
-            var receivers = allReceivers.GetOrFallback(receiver.gameObject, emptyList);
-            receivers.RemoveUnordered(receiver);
+            var localReceivers = receivers.GetOrDefault(receiver.gameObject, emptyList);
+            localReceivers.RemoveUnordered(receiver);
         }
     }
 }

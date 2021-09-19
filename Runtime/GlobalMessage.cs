@@ -14,7 +14,7 @@ namespace Lumpn.Messaging
 
         private readonly List<IGlobalMessageReceiver> receivers = new List<IGlobalMessageReceiver>();
 
-        internal IEnumerable<IGlobalMessageReceiver> Receivers { get { return receivers; } }
+        internal IReadOnlyList<IGlobalMessageReceiver> Receivers { get { return receivers; } }
 
         public void Send()
         {

@@ -2,7 +2,6 @@
 // MIT License
 // Copyright(c) 2020 Jonas Boetel
 //----------------------------------------
-using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -11,33 +10,13 @@ namespace Lumpn.Messaging.Tests
     [TestFixture]
     public sealed class GlobalMessageTest
     {
-        private sealed class Receiver : IGlobalMessageReceiver
-        {
-            public readonly List<Message> received = new List<Message>();
-
-            public void Register(GlobalMessage message)
-            {
-                message.Register(this);
-            }
-
-            public void Deregister(GlobalMessage message)
-            {
-                message.Deregister(this);
-            }
-
-            public void OnMessage(Message message)
-            {
-                received.Add(message);
-            }
-        }
-
         [Test]
         public void TestGlobalMessage()
         {
             var msg = ScriptableObject.CreateInstance<GlobalMessage>();
 
-            var rec = new Receiver();
-            rec.Register(msg);
+            var rec = new GlobalMessageReceiver();
+            msg.Register(rec);
             Assert.AreEqual(0, rec.received.Count);
 
             // receives message sent
@@ -65,14 +44,14 @@ namespace Lumpn.Messaging.Tests
             Assert.AreEqual(3, rec.received.Count);
 
             // local receivers also receive global messages
-            var rec2 = go.AddComponent<TestMessageReceiver>();
-            rec2.Register(msg);
+            var rec2 = go.AddComponent<MessageReceiver>();
+            msg.Register(rec2);
             Assert.AreEqual(0, rec2.received.Count);
             msg.Send();
             Assert.AreEqual(1, rec2.received.Count);
             Assert.AreEqual(msg, rec2.received[0]);
 
-            rec.Deregister(msg);
+            msg.Deregister(rec);
 
             Object.DestroyImmediate(msg2);
             Object.DestroyImmediate(msg);

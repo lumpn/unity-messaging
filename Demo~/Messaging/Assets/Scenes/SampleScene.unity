@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 14644840}
   - component: {fileID: 14644842}
   - component: {fileID: 14644843}
+  - component: {fileID: 14644845}
+  - component: {fileID: 14644844}
   m_Layer: 0
   m_Name: Demo
   m_TagString: Untagged
@@ -219,55 +221,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da444e0ca62c2294f9d8da7150591bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handlers:
-  - message: {fileID: 11400000, guid: 85b5024a9d7950b4b8e10f05f1cd38e5, type: 2}
-    event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 14644839}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: LookAt
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1242853534}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - message: {fileID: 11400000, guid: 85d90e968aacda44887a3e443c0d35f9, type: 2}
-    event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 14644839}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: LookAt
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1178928652}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - message: {fileID: 11400000, guid: e6b756d0b1b5512429a96e07f64f5e27, type: 2}
-    event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 14644839}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: LookAt
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 980746372}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  message: {fileID: 11400000, guid: 85b5024a9d7950b4b8e10f05f1cd38e5, type: 2}
+  event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 14644839}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1242853534}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &14644844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14644838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da444e0ca62c2294f9d8da7150591bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 11400000, guid: e6b756d0b1b5512429a96e07f64f5e27, type: 2}
+  event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 14644839}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 980746372}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &14644845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14644838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da444e0ca62c2294f9d8da7150591bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 11400000, guid: 85d90e968aacda44887a3e443c0d35f9, type: 2}
+  event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 14644839}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1178928652}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &644044847
 GameObject:
   m_ObjectHideFlags: 0
